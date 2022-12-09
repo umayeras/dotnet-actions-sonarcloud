@@ -62,6 +62,7 @@ jobs:
         uses: act10ns/slack@v1
         with: 
           status: ${{ job.status }}
+          webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
           channel: ${{ secrets.SLACK_CHANNEL_NAME }}
           message: Build, Test and Sonar Jobs Completed {{ env.GITHUB_REF_NAME }} branch Successfully
         if: always()   
